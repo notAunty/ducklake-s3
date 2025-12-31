@@ -26,5 +26,9 @@ ATTACH 'ducklake:postgres:dbname=ducklake' AS ducklake
 (
   DATA_PATH 'r2://ducklake-apse1/ducklake-data/'
   -- , READ_ONLY
+  -- , METADATA_SCHEMA 'main' -- Creates additional PG schema
 );
 USE ducklake;
+
+CREATE SCHEMA IF NOT EXISTS main;
+USE ducklake.main;
